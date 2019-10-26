@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "MyActions": {
+      "commandName": "Executable",
+      "executablePath": "dotnet",
+      "commandLineArgs": "ExecutableNuget.dll -a FirstAction"
+    }
+  }
+}
