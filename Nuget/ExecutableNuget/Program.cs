@@ -2,6 +2,7 @@
 {
     using Newtonsoft.Json;
     using System;
+    using System.Diagnostics;
     using System.IO;
     using System.Linq;
     using System.Reflection;
@@ -71,6 +72,7 @@
 
         static ICustomAction FindAction(string name)
         {
+            Debugger.Launch();
             var directory = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
             var libraries = directory.GetFiles("*.dll");
             foreach(var dll in libraries)
