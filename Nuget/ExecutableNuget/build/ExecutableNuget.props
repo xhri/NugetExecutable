@@ -1,7 +1,5 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+<Project>
   <PropertyGroup>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
-
 </Project>

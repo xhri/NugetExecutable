@@ -75,9 +75,13 @@
             var libraries = directory.GetFiles("*.dll");
             foreach(var dll in libraries)
             {
-                var assembly = Assembly.Load(dll.FullName);
-                var type = assembly.GetExportedTypes().Single(t => typeof(ICustomAction).IsAssignableFrom(t) && t.Name.Equals(name));
-                return (ICustomAction)Activator.CreateInstance(type);
+                try
+                {
+                    var assembly = Assembly.LoadFrom(dll.FullName);
+                    var type = assembly.GetExportedTypes().Single(t => typeof(ICustomAction).IsAssignableFrom(t) && t.Name.Equals(name));
+                    return (ICustomAction)Activator.CreateInstance(type);
+                }
+                catch (Exception){}
             }
 
             return null;

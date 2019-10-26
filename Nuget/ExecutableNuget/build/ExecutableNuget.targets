@@ -1,0 +1,8 @@
+<Project>
+	<Target Name="CopyRuntimeConfig" AfterTargets="PostBuildEvent" >
+		<Copy SourceFiles="$(MSBuildThisFileDirectory)ExecutableNuget.runtimeconfig.json" DestinationFiles="$(OutDir)ExecutableNuget.runtimeconfig.json"	/>
+	</Target>
+	<Target Name="CopyDeps" AfterTargets="PostBuildEvent" >
+		<Copy SourceFiles="$(OutDir)$(ProjectName).deps.json" DestinationFiles="$(OutDir)ExecutableNuget.deeps.json"	/>
+	</Target>
+</Project>
